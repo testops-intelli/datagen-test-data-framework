@@ -135,7 +135,7 @@ which is what keeps the "no hardcoding" claim genuinely true.
 │   ├── 06_mode_3.sql                               # Layer 2
 │   ├── 07_seed_candidates_demo.sql                 # Layer 3 (transactions)
 │   ├── 08_seed_candidates_companies_securities.sql # Layer 3 (companies, securities)
-│   └── mode_3_experimental/      # legacy pre-hardening code, not part of the engine
+│   
 ```
 
 ---
