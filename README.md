@@ -144,6 +144,20 @@ which is what keeps the "no hardcoding" claim genuinely true.
 
 ### 1. Clone repo
 
+> ⚠️ **Run each command below one line at a time — press Enter after every
+> line.** Pasting a whole multi-line block at once can cause PowerShell (and
+> some terminals) to merge lines together, producing confusing errors.
+
+Before you start: make sure you've navigated to (or created) the folder where
+you want this repo saved.
+
+**Windows (PowerShell):**
+```powershell
+git clone https://github.com/testops-intelli/datagen-test-data-framework.git
+cd datagen-test-data-framework
+```
+
+**macOS / Linux:**
 ```bash
 git clone https://github.com/testops-intelli/datagen-test-data-framework.git
 cd datagen-test-data-framework
@@ -151,19 +165,39 @@ cd datagen-test-data-framework
 
 ### 2. Setup environment
 
+**Windows (PowerShell):**
+```powershell
+python -m venv venv
+.\venv\Scripts\Activate.ps1
+pip install -r requirements.txt
+```
+
+If `Activate.ps1` fails with a "running scripts is disabled" error, run this
+once, then retry the activate line:
+```powershell
+Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope CurrentUser
+```
+
+**macOS / Linux:**
 ```bash
 python -m venv venv
-source venv/Scripts/activate
+source venv/bin/activate
 pip install -r requirements.txt
 ```
 
 ### 3. Initialize config
 
+**Windows:**
+```powershell
+python scripts\00_init_env.py
+```
+
+**macOS / Linux:**
 ```bash
 python scripts/00_init_env.py
 ```
 
-Edit `.env` (created at repo root):
+This creates `.env` at the repo root from `.env.example`. Open it and set:
 
 ```
 PG_PASSWORD=your_password
@@ -174,6 +208,12 @@ MODE_3_MULTIPLIER=2
 
 ### 4. Run full demo
 
+**Windows:**
+```powershell
+python scripts\run_all.py
+```
+
+**macOS / Linux:**
 ```bash
 python scripts/run_all.py
 ```
@@ -187,7 +227,8 @@ table, prints a preview to the console, and exports each mode's output to
 
 `run_all.py` is a convenience wrapper around three independent, separately-runnable
 steps — useful for seeing exactly what "installing DataGen" actually touches, or for
-running against your own tables instead of the demo ones:
+running against your own tables instead of the demo ones. (Windows: use `\` instead
+of `/` in the paths below.)
 
 ```bash
 # Layer 1: the business environment (companies/securities/transactions +
@@ -212,6 +253,12 @@ python scripts/02_run_demo.py
 
 ### 5. Reset environment
 
+**Windows:**
+```powershell
+python scripts\reset_all.py
+```
+
+**macOS / Linux:**
 ```bash
 python scripts/reset_all.py
 ```
