@@ -349,9 +349,6 @@ Part of the **TestOps Intelli** toolkit:
   (historical-tuple resolution with multiplier), Mode 3 (registry-driven candidate
   resolution with multiplier) — fully metadata-driven, no table-specific hardcoding
 - ✅ `.xlsx` export for every mode's output
-- 🧪 Pre-hardening code (old Mode 3 anchor-universe design) retired from the active
-  engine; kept under `sql/mode_3_experimental/` for reference only — see that folder's
-  README
 
 ---
 
