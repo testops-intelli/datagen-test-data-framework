@@ -275,14 +275,6 @@ tables, which only persist within the session that created them).
 ### Environment Build
 ![Build](docs/env_run.png)
 
-> ⚠️ The Mode 1/2/3 screenshots below predate this hardening pass (old Mode 2/3
-> semantics, no multiplier, no xlsx export). Kept for reference only — regenerate
-> against `run_all.py` before using this repo in a live pitch.
-
-![Mode 1](docs/mode_1.png)
-![Mode 2](docs/mode_2.png)
-![Mode 3](docs/mode_3.png)
-
 ---
 
 ## 🔌 Registering a New Table for Mode 3
